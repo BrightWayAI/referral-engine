@@ -4,6 +4,15 @@ All notable changes to referral-engine are documented here.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/). Versions match `plugin.json`.
 
+## [0.2.4] — Person-page side effect on referral asks (2026-05-12)
+
+### Added
+- **`/referral-ask` Step 7 — person-page Recent-interactions append.** After Step 6's `network.md` log, also append a `<today> — referral-ask — shape: <type>, why-now: <trigger>` line to the connector's cortex person page if one exists at `<config-root>/memory/person/<slug>.md`. Update Last meaningful contact and refresh Relationship temperature toward Active.
+- **Graceful degradation.** No-op if cortex isn't installed or the connector has no graduated page.
+
+### Why this matters
+Phase 3 of SECOND-BRAIN-V2-SPEC. Referral asks are some of the highest-signal interactions — they almost always correspond to a person who deserves a graduated page. This side effect makes referral asks visible on the connector's relationship history so future recall has context on the ask cadence.
+
 ## [0.2.3] — Platform-agnostic Step 0 (2026-05-12)
 
 ### Changed

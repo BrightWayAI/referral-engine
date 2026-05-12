@@ -128,6 +128,21 @@ Prevents double-asking within cadence cap.
 
 ---
 
+## Step 7 — Person-page side effect (cortex v4.2+)
+
+After Step 6's network.md log, also update the connector's person page if it exists.
+
+1. Resolve `<config-root>` via the standard pointer.
+2. Compute connector slug: `firstname-lastname`.
+3. **If `<config-root>/memory/person/<slug>.md` exists** → append to **## Recent interactions**:
+   `<today> — referral-ask — shape: <type>, why-now: <trigger>`
+   Update **Last meaningful contact** in Relationship. Update temperature toward Active.
+4. **If the page does NOT exist** → do nothing. (Connectors are excellent graduation candidates, but the trigger is owned by cortex/contact-researcher, not by this plugin.)
+
+If cortex isn't installed, skip silently.
+
+---
+
 ## Behavior rules
 
 - **Specific > generic.** "Anyone in your network" is weak. "Anyone in your nonprofit network wrestling with how to roll out AI safely" is specific.
