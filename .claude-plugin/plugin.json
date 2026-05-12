@@ -1,6 +1,6 @@
 {
   "name": "referral-engine",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Track connectors in your network. Surface who's gone quiet, who just had a positive touch worth following up, and who's a natural ask-target this week. Drafts referral asks in your voice. Most consultants leave referrals on the table because asking feels awkward; this surfaces the right moment so it doesn't.",
   "author": {
     "name": "BrightWay AI"
