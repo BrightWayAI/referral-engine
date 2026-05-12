@@ -22,11 +22,11 @@ Drafts go for your review before sending.
 
 ## Install
 
-Recommended: via the [BrightWayAI marketplace](https://github.com/BrightWayAI/claude-plugins).
+Recommended: via the [BrightWayAI marketplace](https://github.com/BrightWayAI/nucleus).
 
 ```
-/plugin marketplace add BrightWayAI/claude-plugins
-/plugin install referral-engine@claude-plugins
+/plugin marketplace add BrightWayAI/nucleus
+/plugin install referral-engine@nucleus
 ```
 
 ## First-time setup
