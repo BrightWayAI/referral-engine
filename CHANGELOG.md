@@ -4,6 +4,14 @@ All notable changes to referral-engine are documented here.
 
 Format follows [Keep a Changelog](https://keepachangelog.com/). Versions match `plugin.json`.
 
+## [0.2.0] — Config-root refactor
+
+### Changed
+- **Plugin config moved to a user-chosen folder.** Reads/writes now go to `<config-root>/plugins/referral-engine.user-context.md` and the network log to `<config-root>/plugins/referral-engine.network-log.md`. The old plugin-relative paths failed silently under Cowork's read-only mount.
+- **`/setup-referrals` Step 0 bootstraps the config root** and reads shared identity + voice.
+- **`/referrals` and `/referral-ask`** updated to read/write the new paths.
+- **User-facing prompts debranded** for fork-friendliness.
+
 ## [0.1.0] — Initial release
 
 ### Added

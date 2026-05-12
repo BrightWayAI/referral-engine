@@ -8,9 +8,30 @@ Short interview — captures what referral-engine needs to find your connectors 
 
 ---
 
-## Pre-step — Read shared identity and voice (if available)
+## Step 0 — Resolve plugin config root
 
-Check `~/Documents/Claude/identity.md` and `~/Documents/Claude/voice.md`. If populated, use values for company info and voice. Otherwise capture inline or recommend running `/setup-identity` and `/setup-voice` first.
+Per-plugin config in this marketplace lives under a user-chosen folder, recorded at `~/.claude-plugin-config-root` (single-line text file in the user's home).
+
+### A — Try the pointer
+
+Call `request_cowork_directory(~)` if not granted, then read `~/.claude-plugin-config-root`.
+- **Exists**: read line 1 → mount via `request_cowork_directory(<config-root>)`. Skip to section C.
+- **Missing**: continue to section B.
+
+### B — First-time bootstrap
+
+Prompt: "First-time plugin setup. Where should I store your plugin config — identity, voice, and per-plugin settings? Pick a folder you control (e.g., `~/Documents/Claude/` or `~/Documents/PluginConfig/`). The folder will hold `identity.md`, `voice.md`, and a `plugins/` subdirectory."
+
+Then:
+1. Call `request_cowork_directory(<path>)`. Create `<path>/plugins/`. Write absolute path to `~/.claude-plugin-config-root`.
+2. **Migration**: if `~/Documents/Claude/identity.md` or `voice.md` exists and `<path>` is not `~/Documents/Claude/`, offer to copy.
+3. **Pre-staged content**: if `~/Documents/Claude/plugin-configs/*.user-context.md` files exist, offer to copy into `<path>/plugins/`.
+
+### C — Read shared identity and voice
+
+Read `<config-root>/identity.md` and `<config-root>/voice.md`. If populated, pre-fill identity and voice questions in this interview. If missing, offer to run `/setup-identity` and `/setup-voice` first or proceed inline.
+
+For the rest of this document, **`<config-root>`** refers to the resolved path. This plugin's config file lives at **`<config-root>/plugins/referral-engine.user-context.md`**.
 
 ---
 
@@ -82,7 +103,7 @@ Voice for drafting referral asks comes from `~/Documents/Claude/voice.md`. Confi
 
 ## Step 7 — Write config
 
-Populate `references/user-context.md` per the template structure.
+Populate `<config-root>/plugins/referral-engine.user-context.md` per the template structure.
 
 ---
 

@@ -10,7 +10,7 @@ Draft a referral ask for one specific connector.
 
 ## Step 0 — Preflight
 
-Read `references/user-context.md` (this plugin) and `~/Documents/Claude/voice.md` (shared voice). Read `~/Documents/Claude/identity.md` for company info.
+Read `<config-root>/plugins/referral-engine.user-context.md` (this plugin) and `~/Documents/Claude/voice.md` (shared voice). Read `~/Documents/Claude/identity.md` for company info.
 
 If `lead-engine` is installed, read its user-context for ICP definition. Otherwise pull from this plugin's user-context (which captured ICP during /setup-referrals).
 

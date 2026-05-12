@@ -10,7 +10,7 @@ Weekly digest that surfaces who's worth a touch *for referrals* this week. The p
 
 ## Step 0 — Preflight
 
-Read `references/user-context.md`. If missing, route to `/setup-referrals` and stop. Read `~/Documents/Claude/identity.md` (for time zone, fiscal year defaults) and `~/Documents/Claude/voice.md` (for ask drafting).
+Read `<config-root>/plugins/referral-engine.user-context.md`. If missing, route to `/setup-referrals` and stop. Read `~/Documents/Claude/identity.md` (for time zone, fiscal year defaults) and `~/Documents/Claude/voice.md` (for ask drafting).
 
 Extract from this plugin's user-context:
 - Connector taxonomy (CRM property + value matching)
@@ -117,7 +117,7 @@ If user asks to draft, route to `/referral-ask [contact]` workflow per name. The
 
 ## Step 6 — Log the digest run
 
-If `claude-cortex` is installed, append a CHANGELOG entry to `~/Documents/Claude/memory/network.md` (create if needed) with a one-line summary: "Referral digest run [date] — surfaced [N] high-leverage, [N] value-share, [N] trigger-approaching."
+If `claude-cortex` is installed, append a CHANGELOG entry to `<config-root>/plugins/referral-engine.network-log.md` (create if needed) with a one-line summary: "Referral digest run [date] — surfaced [N] high-leverage, [N] value-share, [N] trigger-approaching."
 
 This prevents asking the same person twice in the same week and provides historical context for future digests.
 
